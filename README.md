@@ -2,7 +2,7 @@
 
 
 
-Create Repository Portable 
+Create Repository Portable (ONLY for linux Beefree OS)
 * Clone setup repository
 > git clone https://github.com/macrolinux/setup
 * Entering directory
