@@ -17,5 +17,8 @@ Create Repository Portable
 > apt clean
 * Create app.iso MUST with aptoncd (telolet version)
 >https://github.com/macrolinux/setup/blob/master/aptoncd_0.1.98%2Btelolet_all.deb
+* Customize free.xml (change vendor,product, version, location, etc )
+* Change wesnoth* with app your name in setup.sh
+> in line DEBIAN_FRONTEND=gnome apt install -y wesnoth*
 * Create installer (.run) with Cross Platform BitRock InstallBuilder
 >https://installbuilder.bitrock.com/download-step-2.html
