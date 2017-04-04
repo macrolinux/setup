@@ -1,5 +1,4 @@
-![](gdebi.png) 
-
+![](gdebi.png)                                                                                      
 
 
 Create Repository Portable (ONLY for linux Beefree OS)
@@ -22,3 +21,5 @@ Create Repository Portable (ONLY for linux Beefree OS)
 > in line DEBIAN_FRONTEND=gnome apt install -y wesnoth*
 * Create installer (.run) with Cross Platform BitRock InstallBuilder
 >https://installbuilder.bitrock.com/download-step-2.html
+>
+![](installersby_tiny.png)
