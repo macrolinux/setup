@@ -13,7 +13,7 @@ Create Repository Portable (ONLY for linux Beefree OS)
 * Download app with dependencies (If your application is not in the repository, this step is not necessary)
 >sudo cp | apt download package
 * Restore status
-sudo cp -f /var/lib/dpkg/status.backup /var/lib/dpkg/status
+>sudo cp -f /var/lib/dpkg/status.backup /var/lib/dpkg/status
 * clean clears out the local repository of retrieved package files.
 > apt clean
 * Create app.iso MUST with aptoncd (telolet version)
