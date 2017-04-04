@@ -1,5 +1,7 @@
 
 # Setup                                                                                    
+> Note : uninstall Applications can use APT or synaptic package manager
+
 
 ![](setup.gif) 
 
