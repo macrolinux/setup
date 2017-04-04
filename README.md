@@ -1,4 +1,5 @@
-![](gdebi.png)                                                                                      
+
+# Setup                                                                                    
 
 ![](setup.gif) 
 
