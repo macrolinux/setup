@@ -1,5 +1,8 @@
 ![](gdebi.png)                                                                                      
 
+![](setup.gif) 
+
+
 
 Create Repository Portable (ONLY for linux Beefree OS)
 * Clone setup repository
