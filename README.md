@@ -5,7 +5,7 @@
 
 
 
-Create Repository Portable (ONLY for linux Beefree OS)
+Step by step Create Repository Portable (ONLY for linux Beefree OS)
 * Clone setup repository
 > git clone https://github.com/macrolinux/setup
 * Entering directory
@@ -27,5 +27,7 @@ Create Repository Portable (ONLY for linux Beefree OS)
 > in line DEBIAN_FRONTEND=gnome apt install -y wesnoth*
 * Create installer (.run) with Cross Platform BitRock InstallBuilder
 >https://installbuilder.bitrock.com/download-step-2.html
->
+* Get a Free License installbuilder for your Open Source Project (optional)
+>https://installbuilder.bitrock.com/open-source-licenses.html
+
 ![](installersby_tiny.png)
