@@ -1,7 +1,7 @@
 
 # Setup                                                                                    
 
-> Note : uninstall an update Applications can use APT or synaptic package manager
+> Note : uninstall and update Applications can use APT or synaptic package manager
 
 ![](setup.gif) 
 
