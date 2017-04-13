@@ -1,6 +1,6 @@
 #!/bin/bash
 while sudo fuser /var/lib/dpkg/lock >/dev/null 2>&1; do
-   sleep 1
+   sleep 7
 done
 rm -rf /etc/apt/sources.list.d/bee.list
 cp -rf bee-repositories.pref /etc/apt/preferences.d
