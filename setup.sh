@@ -8,7 +8,7 @@ cp -rf bee-repositories.pref /etc/apt/preferences.d
 rm -rf /etc/apt/sources.list
 touch /etc/apt/sources.list
 apt-cdrom add -m 
-DEBIAN_FRONTEND=gnome apt install -y wesnoth*
+DEBIAN_FRONTEND=gnome apt install -y wesnoth
 umount /media/cdrom
 rm -rf /etc/apt/sources.list
 touch /etc/apt/sources.list
