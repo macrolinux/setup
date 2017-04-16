@@ -12,6 +12,8 @@ Step by step Create Repository Portable (ONLY for linux Beefree OS)
 > git clone https://github.com/macrolinux/setup
 * Entering directory
 >cd setup
+* Change file mode bits
+>chmod 777 *
 * backup status
 >sudo cp -f /var/lib/dpkg/status /var/lib/dpkg/status.backup
 * copy status file
