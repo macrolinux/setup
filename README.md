@@ -19,7 +19,7 @@ Step by step Create Repository Portable (ONLY for linux Beefree OS)
 * copy status file
 >sudo cp -f status /var/lib/dpkg/status
 * Download app with dependencies (If your application is not in the repository, this step is not necessary)
->sudo cp | apt download package
+>apt download package
 * Restore status
 >sudo cp -f /var/lib/dpkg/status.backup /var/lib/dpkg/status
 * clean clears out the local repository of retrieved package files.
