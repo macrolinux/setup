@@ -13,7 +13,7 @@ Step by step Create Repository Portable (ONLY for linux Beefree OS)
 * Entering directory
 >cd setup
 * Change file mode bits
->chmod 777 *
+>sudo chmod 777 *
 * backup status
 >sudo cp -f /var/lib/dpkg/status /var/lib/dpkg/status.backup
 * copy status file
