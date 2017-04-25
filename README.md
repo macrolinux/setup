@@ -1,5 +1,5 @@
 
-# Setup                                                                                    
+# Setup (www.centerfree.cf)                                                                                   
 
 > Note : uninstall and update Applications can use APT or synaptic package manager
 
