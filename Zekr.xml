@@ -3,6 +3,7 @@
     <fullName>BeeFree Zekr</fullName>
     <version>1.1.0</version>
     <installerFilename>${product_shortname}-${product_version}-standalone-setup.${platform_exec_suffix}</installerFilename>
+    <readmeFile>../readme.txt</readmeFile>
     <leftImage>side.png</leftImage>
     <logoImage>gdebi.png</logoImage>
     <componentList>
@@ -105,7 +106,7 @@
         </runProgram>
         <writeFile>
             <encoding>utf-8</encoding>
-            <path>~/.local/share/applications/zekr.desktop</path>
+            <path>~/.local/share/applications/macrolinux-zekr.desktop</path>
             <text>
 [Desktop Entry]
 Name=Zekr 
@@ -118,16 +119,20 @@ Exec=${installdir}/zekr/zekr.sh
 Terminal=false
 Type=Application
 Icon=${installdir}/zekr/zekr.png
-Categories=Development;
+Categories=GTK;GNOME;Education;
     </text>
         </writeFile>
         <runProgram>
             <program>chmod</program>
-            <programArguments>777 ~/.local/share/applications/zekr.desktop</programArguments>
+            <programArguments>777 ~/.local/share/applications/macrolinux-zekr.desktop</programArguments>
+        </runProgram>
+        <runProgram>
+            <program>xdg-desktop-menu</program>
+            <programArguments>install ~/.local/share/applications/macrolinux-zekr.desktop</programArguments>
         </runProgram>
     </postInstallationActionList>
     <preUninstallationActionList>
-        <deleteFile path="~/.local/share/applications/zekr.desktop"/>
+        <deleteFile path="~/.local/share/applications/macrolinux-zekr.desktop"/>
     </preUninstallationActionList>
     <postUninstallationActionList>
         <deleteFile>
