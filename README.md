@@ -19,7 +19,7 @@ Step by step Create Repository Portable (ONLY for linux Beefree OS)
 * clean clears out the local repository of retrieved package files.
 > apt clean
 * Create app.iso MUST with aptoncd (telolet version)
->https://sourceforge.net/projects/beefree/files/app/administration/APTonCD-0.1.98%2Btelolet-standalone-deb-setup.run/download
+>https://github.com/macrolinux/setup/blob/master/aptoncd_0.1.98%2Btelolet_all.deb
 * Customize free.xml (change vendor,product, version, location, etc )
 * Change wesnoth with app your name in setup.sh
 > in line DEBIAN_FRONTEND=gnome apt install -y wesnoth
