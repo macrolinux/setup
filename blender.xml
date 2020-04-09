@@ -1,0 +1,264 @@
+<project>
+    <shortName>Blender</shortName>
+    <fullName>BeeFree Blender</fullName>
+    <version>2.82a</version>
+    <installerFilename>${product_shortname}-${product_version}-standalone-setup.${platform_exec_suffix}</installerFilename>
+    <leftImage>../../../Downloads/blender-2.82a-linux64/side.png</leftImage>
+    <logoImage>../../../Downloads/blender-2.82a-linux64/blender.png</logoImage>
+    <componentList>
+        <component>
+            <name>default</name>
+            <description>Default Component</description>
+            <canBeEdited>1</canBeEdited>
+            <selected>1</selected>
+            <show>1</show>
+            <folderList>
+                <folder>
+                    <description>Program Files</description>
+                    <destination>${installdir}</destination>
+                    <name>programfiles</name>
+                    <platforms>all</platforms>
+                    <distributionFileList>
+                        <distributionDirectory>
+                            <origin>../../../Downloads/blender-2.82a-linux64</origin>
+                        </distributionDirectory>
+                    </distributionFileList>
+                    <shortcutList>
+                        <shortcut>
+                            <comment>Uninstall</comment>
+                            <exec>${installdir}/${uninstallerName}</exec>
+                            <icon>${installdir}/blender-2.82a-linux64/blender.svg</icon>
+                            <name>Uninstall ${product_fullname}</name>
+                            <path>${installdir}</path>
+                            <platforms>all</platforms>
+                            <runAsAdmin>0</runAsAdmin>
+                            <runInTerminal>0</runInTerminal>
+                            <windowsExec>${installdir}/${uninstallerName}.exe</windowsExec>
+                            <windowsExecArgs></windowsExecArgs>
+                            <windowsIcon></windowsIcon>
+                            <windowsPath>${installdir}</windowsPath>
+                        </shortcut>
+                    </shortcutList>
+                </folder>
+                <folder>
+                    <description>Program Files</description>
+                    <destination>${installdir}</destination>
+                    <name>programfileslinux</name>
+                    <platforms>linux</platforms>
+                </folder>
+                <folder>
+                    <description>Program Files</description>
+                    <destination>${installdir}</destination>
+                    <name>programfileswindows</name>
+                    <platforms>windows</platforms>
+                </folder>
+                <folder>
+                    <description>Program Files</description>
+                    <destination>${installdir}</destination>
+                    <name>programfilesosx</name>
+                    <platforms>osx</platforms>
+                </folder>
+            </folderList>
+            <startMenuShortcutList>
+                <startMenuShortcut>
+                    <comment>Uninstall ${product_fullname}</comment>
+                    <name>Uninstall ${product_fullname}</name>
+                    <runAsAdmin>0</runAsAdmin>
+                    <runInTerminal>0</runInTerminal>
+                    <windowsExec>${installdir}/${uninstallerName}.exe</windowsExec>
+                    <windowsExecArgs></windowsExecArgs>
+                    <windowsIcon></windowsIcon>
+                    <windowsPath>${installdir}/</windowsPath>
+                </startMenuShortcut>
+            </startMenuShortcutList>
+        </component>
+    </componentList>
+    <initializationActionList>
+        <setInstallerVariable>
+            <name>back_page</name>
+            <value>welcome</value>
+        </setInstallerVariable>
+        <setInstallerVariable>
+            <name>next_page</name>
+            <value>readytoinstall</value>
+        </setInstallerVariable>
+    </initializationActionList>
+    <preInstallationActionList>
+        <setInstallerVariable>
+            <name>installdir</name>
+            <value>${env(HOME)}/Applications/${product_shortname}-${product_version}</value>
+            <ruleList>
+                <platformTest>
+                    <type>linux</type>
+                </platformTest>
+            </ruleList>
+        </setInstallerVariable>
+    </preInstallationActionList>
+    <readyToInstallActionList>
+        <runProgram progressText="Remove old version.">
+            <program>${installdir}/uninstall</program>
+            <programArguments>--mode unattended</programArguments>
+            <workingDirectory>${installdir}</workingDirectory>
+            <ruleList>
+                <fileExists>
+                    <path>${installdir}/uninstall</path>
+                </fileExists>
+            </ruleList>
+        </runProgram>
+    </readyToInstallActionList>
+    <postInstallationActionList>
+        <runProgram>
+            <program>mkdir</program>
+            <programArguments>-p ~/.local/share/applications/  ~/.local/share/icons/hicolor/128x128/apps/ ~/.local/share/thumbnailers/</programArguments>
+        </runProgram>
+        <runProgram>
+            <program>cp</program>
+            <programArguments>-f ${installdir}/blender-2.82a-linux64/blender.svg ~/.local/share/icons/hicolor/128x128/apps/</programArguments>
+        </runProgram>
+        <writeFile>
+            <encoding>utf-8</encoding>
+            <path>~/.local/share/thumbnailers/blender.thumbnailer</path>
+            <text>
+[Thumbnailer Entry]
+TryExec=blender-thumbnailer.py
+Exec=blender-thumbnailer.py %u %o
+MimeType=application/x-blender;
+
+    </text>
+        </writeFile>
+        <writeFile>
+            <encoding>utf-8</encoding>
+            <path>~/.local/share/applications/blenderfondation-blender.desktop</path>
+            <text>
+[Desktop Entry]
+Name=Blender
+GenericName=3D modeler
+GenericName[ar]=3D المنمذج ثلاثي الأبعاد
+GenericName[ca]=Modelador 3D
+GenericName[cs]=3D modelování
+GenericName[da]=3D-modellering
+GenericName[de]=3D-Modellierer
+GenericName[el]=Μοντελοποιητής 3D
+GenericName[es]=Modelador 3D
+GenericName[et]=3D modelleerija
+GenericName[fi]=3D-mallintaja
+GenericName[fr]=Modeleur 3D
+GenericName[gl]=Modelador 3D
+GenericName[hu]=3D modellező
+GenericName[it]=Modellatore 3D
+GenericName[ja]=3D モデラー
+GenericName[lt]=3D modeliavimas
+GenericName[nb]=3D-modellering
+GenericName[nl]=3D-modeller
+GenericName[pl]=Modelowanie 3D
+GenericName[pt_BR]=Modelador 3D
+GenericName[ro]=Arhitect 3D
+GenericName[ru]=Редактор 3D-моделей
+GenericName[tr]=3D modelleyici
+GenericName[uk]=Редактор 3D-моделей
+GenericName[wa]=Modeleu 3D
+GenericName[zh_CN]=3D 建模
+GenericName[zh_TW]=3D 模型
+Comment=3D modeling, animation, rendering and post-production
+Comment[ar]=3D النمذجة، الرسوم المتحركة، والتجسيد، وما بعد الإنتاج
+Comment[ast]=Modeláu 3D, animación, renderizáu y postproducción
+Comment[eu]=3D modelatzea, animazioa, errendatzea eta post-produkzioa
+Comment[be]=Праграма прасторавага мадэлявання, анімацыі, апрацоўкі відэа і давядзення відэапрадукцыі
+Comment[bn]=ত্রিমাত্রিক মডেল, অ্যানিমেশন, রেন্ডারিং এবং পোস্ট-উৎপাদন
+Comment[bs]=3D modeliranje, animacija, obrada i postprodukcija
+Comment[bg]=3D моделиране, анимиране, рендиране и пост-продукция
+Comment[ca]=Modelat 3D, animació, renderització i post-producció
+Comment[ca@valencia]=Modelat 3D, animació, renderització i post-producció
+Comment[crh]=3B modelleme, animasyon, işleme ve son üretim
+Comment[cs]=3D modelování, animace, rederování a postprodukce
+Comment[da]=3D-modellering, animation, rendering og efterbehandling
+Comment[de]=3D-Modellierung, Animation, Rendering und Nachbearbeitung
+Comment[nl]=3d-modelleren, animeren, renderen en post-productie
+Comment[el]=Μοντελοποίηση 3D, κινούμενα σχέδια, αποτύπωση και οργάνωση διαδικασίας μετά-την-παραγωγή
+Comment[eo]=3D-modelado, animacio, renderado kaj postproduktado
+Comment[es]=Modelado 3D, animación, renderizado y post-producción
+Comment[et]=Kolmemõõtmeline modelleerimine, animeerimine, esitlemine ja järeltöötlemine
+Comment[fi]=3D-mallinnus, -animaatiot, -renderöinti ja -tuotanto
+Comment[fr]=Modélisation 3D, animation, rendu et post-production
+Comment[fr_CA]=Modélisation 3D, animation, rendu et post-production
+Comment[gl]=Modelado 3D, animación, renderizado e postprodución
+Comment[hu]=3D modellek és animációk létrehozása és szerkesztése
+Comment[is]=Þrívíddarmódel, hreyfimyndir, myndgerð og frágangur myndskeiða
+Comment[it]=Modellazione 3D, animazione, rendering e post-produzione
+Comment[ja]=3Dモデリング、アニメーション、レンダリング、ポストプロダクションのツール
+Comment[ko]=3D 모델링, 애니메이션, 렌더링과 포스트 프로덕션
+Comment[lt]=3D modeliavimas, animacijų kūrimas, atvaizdavimas ir tobulinimas
+Comment[lv]=3D modelēšana, animācija, renderēšana un pēcapstrāde
+Comment[ms]=Pemodelan, animasi, penerapan dan post-produksi 3D
+Comment[nb]=3D-modellering, animasjon, rendering og postproduksjon
+Comment[oc]=Modelizacion 3D, animacion, rendut e post-produccion
+Comment[pl]=Modelowanie 3D, animacja, renderowanie i postprodukcja
+Comment[pt]=Modelação 3D, animação, renderização e pós-produção
+Comment[pt_BR]=Modelagem 3D, animação, renderização e pós-produção
+Comment[ro]=Modelare, animare, afișare și post-producție 3D
+Comment[ru]=3D-моделирование, анимация, рендеринг и компоновка
+Comment[sl]=3D modeliranje, animacija, izrisovanje in nadaljnje obdelovanje
+Comment[sq]=Animacion i modeleve 3D, rregullim dhe më pas prodhim
+Comment[sr]=3Д моделовање, анимација, исцртавање и постпродукција
+Comment[sv]=3d-modellering, animering, rendering och efterbehandling
+Comment[ta]=முப்பரிமாண ஒப்புருவாக்கம், அசைவூட்டம், காட்சியாக்கம் மற்றும் உருவாக்கத்துக்கு பிந்தைய செயல்பாடுகள்
+Comment[tg]=Моделсозии 3D, аниматсия, пешниҳод ва истеҳсоли баъдӣ
+Comment[tr]=3B modelleme, animasyon, işleme ve son üretim
+Comment[uk]=Програма просторового моделювання, анімації, обробки відео та доведення відеопродуктів
+Comment[vi]=Tạo hình mẫu 3D, hoạt họa, dựng hình và các công việc hậu kỳ
+Comment[wa]=Modelaedje 3D, animåcion, rindou eyet après-produccion
+Comment[zh_HK]=3D 模型、動畫、算圖和後製
+Comment[zh_CN]=3D 建模、动画、渲染和后期制作
+Comment[zh_TW]=3D 模型、動畫、算圖和後製
+Keywords=3d;cg;modeling;animation;painting;sculpting;texturing;video editing;video tracking;rendering;render engine;cycles;game engine;python;
+Exec=${installdir}/blender-2.82a-linux64/blender %f
+Icon=blender
+Terminal=false
+Type=Application
+Categories=Graphics;3DGraphics;
+MimeType=application/x-blender;
+
+    </text>
+        </writeFile>
+        <runProgram>
+            <program>chmod</program>
+            <programArguments>777 ~/.local/share/applications/blenderfondation-blender.desktop</programArguments>
+        </runProgram>
+        <runProgram>
+            <program>xdg-desktop-menu</program>
+            <programArguments>install ~/.local/share/applications/blenderfondation-blender.desktop</programArguments>
+        </runProgram>
+    </postInstallationActionList>
+    <preUninstallationActionList>
+        <deleteFile path="~/.local/share/applications/blenderfondation-blender.desktop"/>
+        <deleteFile path="~/.local/share/thumbnailers/blender.thumbnailer"/>
+        <deleteFile path="~/.local/share/icons/hicolor/128x128/apps/blender.svg"/>
+    </preUninstallationActionList>
+    <postUninstallationActionList>
+        <deleteFile>
+            <path>${installdir}</path>
+        </deleteFile>
+    </postUninstallationActionList>
+    <disableSplashScreen>1</disableSplashScreen>
+    <enableRollback>0</enableRollback>
+    <enableTimestamp>1</enableTimestamp>
+    <saveRelativePaths>1</saveRelativePaths>
+    <unattendedModeUI>minimal</unattendedModeUI>
+    <vendor>Blender Fondation</vendor>
+    <parameterList>
+        <directoryParameter>
+            <name>installdir</name>
+            <description>Installer.Parameter.installdir.description</description>
+            <explanation>Installer.Parameter.installdir.explanation</explanation>
+            <value></value>
+            <default>${platform_install_prefix}/${product_shortname}-${product_version}</default>
+            <allowEmptyValue>0</allowEmptyValue>
+            <ask>yes</ask>
+            <cliOptionName>prefix</cliOptionName>
+            <mustBeWritable>yes</mustBeWritable>
+            <mustExist>0</mustExist>
+            <width>30</width>
+        </directoryParameter>
+    </parameterList>
+</project>
+
